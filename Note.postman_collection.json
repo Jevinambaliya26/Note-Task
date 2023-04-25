@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "cac2e2ef-2013-4201-9e80-8e3f820dba28",
+		"name": "Note",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11002818"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"jevin@gmail.com\",\n    \"firstName\":\"jevin\",\n    \"lastName\":\"Ambaliya\",\n    \"birthDate\":\"09-02-1994\",\n    \"mobileNumber\":\"9016520328\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/user/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"jevin@gmail.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "create note",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDdlMDY5OTI3ODUwMDNjZGEwZTQ5ZiIsImVtYWlsIjoidmlqYXlAZ21haWwuY29tIiwidHlwZSI6InVzZXIiLCJpYXQiOjE2ODI0MzIxNDIsImV4cCI6MTcxMzk2ODE0Mn0.JnCLy1tcTDKEsp5o5gv1LxOvxtntFHtGaaTpBy_CB5o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"aBC\",\n    \"content\":\"b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/note/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get note by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDdlMDY1OTI3ODUwMDNjZGEwZTQ5ZSIsImVtYWlsIjoiamV2aW5AZ21haWwuY29tIiwidHlwZSI6InVzZXIiLCJpYXQiOjE2ODI0MzIyMjIsImV4cCI6MTcxMzk2ODIyMn0.At4moJzYTKkJN1OdFpX9PSZscfIbh62eEUywz3K_4PI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/note/6447e07992785003cda0e4a0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"6447e07992785003cda0e4a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all note",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDdlMDY5OTI3ODUwMDNjZGEwZTQ5ZiIsImVtYWlsIjoidmlqYXlAZ21haWwuY29tIiwidHlwZSI6InVzZXIiLCJpYXQiOjE2ODI0MzIxNDIsImV4cCI6MTcxMzk2ODE0Mn0.JnCLy1tcTDKEsp5o5gv1LxOvxtntFHtGaaTpBy_CB5o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/note/?page=3&limit=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update note by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDdiM2IzMTE4YWRjZWRkODk3OTQ1MiIsImVtYWlsIjoiamV2aW5AZ21haWwuY29tIiwidHlwZSI6InVzZXIiLCJpYXQiOjE2ODI0MzAwMTgsImV4cCI6MTcxMzk2NjAxOH0.PPn3WfKwZQCY5jPdaaJPKPjda_dhR0VlOiYZr_8TJpI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\":\"6447d88b28c136fe256ba76a\",\n    \"title\":\"first task12\",\n    \"content\":\"its my first task\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/note/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete note by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDdiM2IzMTE4YWRjZWRkODk3OTQ1MiIsImVtYWlsIjoiamV2aW5AZ21haWwuY29tIiwidHlwZSI6InVzZXIiLCJpYXQiOjE2ODI0MjQ0ODEsImV4cCI6MTcxMzk2MDQ4MX0.P1gKVu2YWMMsj_5zQekb1g04uZaHBmWkKb7K4HCfyB8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/note/6447d88b28c136fe256ba76a",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"6447d88b28c136fe256ba76a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
